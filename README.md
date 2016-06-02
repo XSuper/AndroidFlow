@@ -126,9 +126,9 @@ String flowStr =
 ```
 每个流程可以分为三个部分
 
-流程类别绑定
-流程实例化
-流程执行流程
+1. 流程类别绑定
+2. 流程实例化
+3. 流程执行流程
 
 类别绑定
 ```java
@@ -148,7 +148,7 @@ flow.bindCell("Dialog","com.isuper.androidflow.mflow.DialogCell");
 实例化
 
 ```java
-//别名和定义语句用=> 分开，=>前的Dialog用于流程[]扩号里面的Dialog 是定义语句的别名
+//别名和定义语句用=> 分开，=>前的Dialog用于流程[]扩号里面的Dialog 是定义语句的别名，每一个：后面都是一个参数，实例化的时候会根据参数类型和参数个数选择构造方法进行实例化。
 Dialog=>[Dialog:{context}:是否进行下去]
 
 //代码定义
@@ -158,6 +158,17 @@ LogCell logCell = new LogCell("hahaha");
 flow.putCell("Log", logCell);
 
 ```
+
+在上面字符串中应该注意到了{context}，流程定义支持设置值也可以直接写字符串，设置值可以是任意类型
+设置值的方法
+```java
+//设置全局值
+	Flow.setGlobalCellParam("context", MainActivity.this);
+//单个流程设置值
+  flow.setCellParam("context", MainActivity.this);
+
+```
+
 
 执行流程定义
 ```java
