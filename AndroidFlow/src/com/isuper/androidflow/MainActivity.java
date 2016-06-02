@@ -115,7 +115,7 @@ public class MainActivity extends Activity implements OnClickListener{
 				+ "Toast::com.isuper.androidflow.mflow.ToastCell\n"
 				+ "Log::com.isuper.androidflow.mflow.LogCell\n"
 				+ "Dialog=>[Dialog:{context}:是否进行下去]\n"
-				+ "Toast=>[Toast:{context}:hello baily u a so cute]\n"
+				+ "Toast=>[Toast:{context}:hello u a so cute]\n"
 				+ "Log=>[Log:{logValue}]\n" 
 				+ "start->Log->Dialog\n"
 				+ "Dialog(yes)->Toast->end\n" 
@@ -125,10 +125,12 @@ public class MainActivity extends Activity implements OnClickListener{
 			Flow.setGlobalCellParam("logValue", "yes会toast No 会直接结束");
 			Flow.createWithString(flowStr).start();
 			
-//			Flow flow = new Flow();
+			Flow flow = new Flow();
+//			cell参数不是全局
 //			flow.makeWithString(flowStr);
 //			flow.setCellParam("context", this);
 //			flow.setCellParam("logValue", "yes会toast No 会直接结束");
+//			flow.makeWithString(flowStr);
 			
 			
 		} catch (ClassNotFoundException e) {
