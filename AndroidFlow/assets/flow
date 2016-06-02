@@ -1,0 +1,9 @@
+Dialog::com.isuper.androidflow.mflow.DialogCell
+Toast::com.isuper.androidflow.mflow.ToastCell
+Log::com.isuper.androidflow.mflow.LogCell
+Dialog=>[Dialog:{context}:是否进行下去]
+Toast=>[Toast:{context}:hello baily u a so cute]
+Log=>[Log:{logValue}]
+start->Log->Dialog
+Dialog(yes)->Toast->end
+Dialog(no)->end
